@@ -78,11 +78,11 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
     }
 
-    public int getHealth()
+    public int GetHealth()
     {
         return playerHealth;
     }
-    public int getAmmo()
+    public int GetAmmo()
     {
         return playerAmmo;
     }
