@@ -551,6 +551,7 @@ MonoBehaviour:
   playerSpeed: 5
   jumpForce: 5
   raycastDistance: 1
+  cam: {fileID: 963194228}
 --- !u!54 &1677283441
 Rigidbody:
   m_ObjectHideFlags: 0

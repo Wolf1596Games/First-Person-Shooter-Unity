@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float playerSpeed = 1f;
     [SerializeField] float jumpForce = 1f;
     [SerializeField] float raycastDistance = 1f;
+    [SerializeField] Transform cam;
 
     Rigidbody rb;
 
@@ -37,7 +38,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(float h, float v)
     {
-        rb.velocity = new Vector3(h * playerSpeed, rb.velocity.y, v * playerSpeed);
+        Vector3 camForward = cam.forward;
+        Vector3 camRight = cam.right;
+
+        camForward.y = 0;
+        camRight.y = 0;
+        camForward.Normalize();
+        camRight.Normalize();
+
+        Vector3 moveDirection = (camForward * v * playerSpeed) + (camRight * h * playerSpeed);
+
+        rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
     }
 
     public void Jump()
