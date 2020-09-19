@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
-    [SerializeField] int playerHealth = 100;
+    [Range(0, 100)] [SerializeField] int playerHealth = 100;
     [SerializeField] int playerAmmo = 100;
 
     [Header("Movement")]
@@ -82,8 +82,16 @@ public class PlayerController : MonoBehaviour
     {
         return playerHealth;
     }
+    public void SetHealth(int health)
+    {
+        playerHealth = health;
+    }
     public int GetAmmo()
     {
         return playerAmmo;
+    }
+    public void SetAmmo(int ammo)
+    {
+        playerAmmo = ammo;
     }
 }
