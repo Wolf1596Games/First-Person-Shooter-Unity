@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float playerSpeed = 1f;
     [SerializeField] float jumpForce = 1f;
+    [SerializeField] float rotSpeed = 1f;
     [SerializeField] float jumpRaycastDistance = 1f;
     [SerializeField] Transform cam;
 
@@ -31,6 +32,11 @@ public class PlayerController : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
+
+        //Mouse Input
+        float x = Input.GetAxis("Mouse X");
+        float y = Input.GetAxis("Mouse Y");
+        transform.Rotate(new Vector3(0, x * rotSpeed, 0));
 
         Move(h, v);
 

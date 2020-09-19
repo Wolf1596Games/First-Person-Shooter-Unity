@@ -558,51 +558,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &956631894
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 956631895}
-  - component: {fileID: 956631896}
-  m_Layer: 0
-  m_Name: Camera Pivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &956631895
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956631894}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 963194228}
-  m_Father: {fileID: 1677283439}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &956631896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956631894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf03f3c6b16bf1d429e522ffcd838ad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotSpeed: 750
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,9 +636,9 @@ Transform:
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.24108057, y: -0, z: -0, w: 0.9705051}
   m_LocalPosition: {x: 0, y: 1.315, z: -4.12}
-  m_LocalScale: {x: 1, y: 0.5614722, z: 0.82036626}
+  m_LocalScale: {x: 1, y: 0.56147224, z: 0.82036626}
   m_Children: []
-  m_Father: {fileID: 956631895}
+  m_Father: {fileID: 1677283439}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 27.901, y: 0, z: 0}
 --- !u!1 &1231690698
@@ -1037,7 +992,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: -13.96}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
-  - {fileID: 956631895}
+  - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1057,6 +1012,7 @@ MonoBehaviour:
   playerAmmo: 15
   playerSpeed: 5
   jumpForce: 5
+  rotSpeed: 1.5
   jumpRaycastDistance: 1
   cam: {fileID: 963194228}
   fireRaycastDistance: 10
@@ -1074,7 +1030,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1001 &889999776409461060
 PrefabInstance:
