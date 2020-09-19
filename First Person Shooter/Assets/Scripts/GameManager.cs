@@ -36,7 +36,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(SceneManager.GetActiveScene().name == "TitleScreen" || SceneManager.GetActiveScene().name == "GameOver")
+        {
+            Cursor.visible = true;
+        }
     }
 
     public void LoadStartScene()
