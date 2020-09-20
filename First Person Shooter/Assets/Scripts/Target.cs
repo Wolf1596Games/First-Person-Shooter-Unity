@@ -1,20 +1,38 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Target : MonoBehaviour
 {
     Transform currentTarget;
+    [Header("Target Movement")]
     [SerializeField] Transform[] targets;
     int targetIndex = 0;
-    [SerializeField] float speed;
     [SerializeField] float dist;
 
+    [Header("Target Stats")]
+    [SerializeField] float speed;
+    [SerializeField] int health = 15;
+
+    GameManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
         UpdateTarget();
+
+        manager = FindObjectOfType<GameManager>();
+
+        CountTargets();
+    }
+
+    private void CountTargets()
+    {
+        if(tag == "Target")
+        {
+            manager.CountTargets();
+        }
     }
 
     // Update is called once per frame
@@ -33,10 +51,26 @@ public class Target : MonoBehaviour
 
             UpdateTarget();
         }
+
+        if(health <= 0)
+        {
+            DestroyTarget();
+        }
+    }
+
+    private void DestroyTarget()
+    {
+        Destroy(gameObject);
+        manager.TargetDestroyed();
     }
 
     void UpdateTarget()
     {
         currentTarget = targets[targetIndex];
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        health--;
     }
 }

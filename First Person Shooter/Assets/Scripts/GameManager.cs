@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] int targetsInScene;
+
     public static GameManager instance;
 
     PlayerController player;
@@ -58,5 +60,18 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void CountTargets()
+    {
+        targetsInScene++;
+    }
+    public void TargetDestroyed()
+    {
+        targetsInScene--;
+        if(targetsInScene <= 0)
+        {
+            LoadGameOver();
+        }
     }
 }

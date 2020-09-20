@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform cam;
 
     [Header("Firing")]
-    [SerializeField] float fireRaycastDistance = 10f;
+    [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] GameObject projectilePrefab;
 
     Rigidbody rb;
 
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
         Move(h, v);
 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && playerAmmo != 0)
         {
             Fire();
         }
@@ -59,9 +60,8 @@ public class PlayerController : MonoBehaviour
 
     private void Fire()
     {
-        Ray r = new Ray(transform.position, Vector3.forward);
-        Debug.DrawLine(r.origin, r.origin + (Vector3.forward * fireRaycastDistance));
-        RaycastHit hit;
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
+        projectile.GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed;
 
         playerAmmo--;
     }
@@ -80,7 +80,6 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
     }
-
     public void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);

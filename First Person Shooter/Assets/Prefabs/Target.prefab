@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5589346299930601055}
   - component: {fileID: 5589346299930601054}
   - component: {fileID: 5589346299930601051}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,5 +130,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 2
   dist: 1
+  speed: 1.5
+  health: 15
