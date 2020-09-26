@@ -253,9 +253,9 @@ GameObject:
   - component: {fileID: 391527973}
   - component: {fileID: 391527972}
   - component: {fileID: 391527971}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AnimTarget
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

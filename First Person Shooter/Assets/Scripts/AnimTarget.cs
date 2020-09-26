@@ -14,12 +14,37 @@ public class AnimTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = FindObjectOfType<GameManager>();
+
+        CountTargets();
+    }
+
+    private void CountTargets()
+    {
+        if (tag == "Target")
+        {
+            manager.CountTargets();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+        {
+            DestroyTarget();
+        }
+
         transform.position = Vector3.Lerp(transform.position, target.position, speed * Time.deltaTime);
+    }
+
+    private void DestroyTarget()
+    {
+        Destroy(gameObject);
+        manager.TargetDestroyed();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        health--;
     }
 }
