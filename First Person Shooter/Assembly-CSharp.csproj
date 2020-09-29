@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AmmoPickup.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Hazard.cs" />
     <Compile Include="Assets\Scripts\DisplayHealth.cs" />
     <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
@@ -65,7 +66,7 @@
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\AnimTarget.cs" />
     <Compile Include="Assets\Scripts\KillZone.cs" />
-    <Compile Include="Assets\Scripts\Hazard.cs" />
+    <Compile Include="Assets\Scripts\CameraMovement.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
